@@ -1,0 +1,611 @@
+2019-08-01 04:09:50 [127.0.0.1][-][c1j3or1blc2nf7qdcl1qd3g5u7][error][Exception] Exception: 123 in /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php:129
+Stack trace:
+#0 [internal function]: frontend\controllers\SiteController->actionTest()
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('test', Array)
+#4 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/test', Array)
+#5 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#7 {main}
+2019-08-01 04:09:50 [127.0.0.1][-][c1j3or1blc2nf7qdcl1qd3g5u7][info][application] $_GET = [
+    'r' => 'site/test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'c1j3or1blc2nf7qdcl1qd3g5u7'
+    '_csrf-frontend' => '1f5744d7bbeb9fc90dddc7a2d1cadb2c4f9e2a7940b6ec12716e9aece5103eb8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"el7YPzZG4xujtUGbeleQtcKH_atkTMa_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=c1j3or1blc2nf7qdcl1qd3g5u7; _csrf-frontend=1f5744d7bbeb9fc90dddc7a2d1cadb2c4f9e2a7940b6ec12716e9aece5103eb8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22el7YPzZG4xujtUGbeleQtcKH_atkTMa_%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://frontend.dev/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'frontend.dev'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'frontend.dev'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '57494'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/home/roman/administrator/www/yii-application/frontend/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=site%2Ftest'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Ftest'
+    'SCRIPT_FILENAME' => '/home/roman/administrator/www/yii-application/frontend/web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1564632590.3109
+    'REQUEST_TIME' => 1564632590
+]
+2019-08-01 04:45:25 [127.0.0.1][-][c1j3or1blc2nf7qdcl1qd3g5u7][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: Invalid validation rule: a rule must specify both attribute names and validator type. in /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php:471
+Stack trace:
+#0 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(420): yii\base\Model->createValidators()
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(189): yii\base\Model->getValidators()
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(816): yii\base\Model->scenarios()
+#3 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(434): yii\base\Model->activeAttributes()
+#4 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(494): yii\base\Model->getActiveValidators('username')
+#5 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(926): yii\base\Model->isAttributeRequired('username')
+#6 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(402): yii\widgets\ActiveField->addAriaAttributes('<span class="st...')
+#7 /home/roman/administrator/www/yii-application/frontend/views/site/test-extra.php(6): yii\widgets\ActiveField->textInput('<span class="st...')
+#8 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(348): require('/home/roman/adm...')
+#9 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/roman/adm...', Array)
+#10 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/roman/adm...', Array, Object(frontend\controllers\SiteController))
+#11 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(384): yii\base\View->render('test-extra', Array, Object(frontend\controllers\SiteController))
+#12 /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php(129): yii\base\Controller->render('test-extra', Array)
+#13 [internal function]: frontend\controllers\SiteController->actionTest()
+#14 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('test', Array)
+#17 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/test', Array)
+#18 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#20 {main}
+2019-08-01 04:45:25 [127.0.0.1][-][c1j3or1blc2nf7qdcl1qd3g5u7][info][application] $_GET = [
+    'r' => 'site/test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'c1j3or1blc2nf7qdcl1qd3g5u7'
+    '_csrf-frontend' => '1f5744d7bbeb9fc90dddc7a2d1cadb2c4f9e2a7940b6ec12716e9aece5103eb8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"el7YPzZG4xujtUGbeleQtcKH_atkTMa_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=c1j3or1blc2nf7qdcl1qd3g5u7; _csrf-frontend=1f5744d7bbeb9fc90dddc7a2d1cadb2c4f9e2a7940b6ec12716e9aece5103eb8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22el7YPzZG4xujtUGbeleQtcKH_atkTMa_%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://frontend.dev/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'frontend.dev'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'frontend.dev'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '58340'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/home/roman/administrator/www/yii-application/frontend/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=site%2Ftest'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Ftest'
+    'SCRIPT_FILENAME' => '/home/roman/administrator/www/yii-application/frontend/web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1564634725.0954
+    'REQUEST_TIME' => 1564634725
+]
+2019-08-01 04:46:58 [127.0.0.1][-][c1j3or1blc2nf7qdcl1qd3g5u7][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: Invalid validation rule: a rule must specify both attribute names and validator type. in /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php:471
+Stack trace:
+#0 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(420): yii\base\Model->createValidators()
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(189): yii\base\Model->getValidators()
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(816): yii\base\Model->scenarios()
+#3 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(434): yii\base\Model->activeAttributes()
+#4 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(494): yii\base\Model->getActiveValidators('username')
+#5 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(926): yii\base\Model->isAttributeRequired('username')
+#6 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(402): yii\widgets\ActiveField->addAriaAttributes('<span class="st...')
+#7 /home/roman/administrator/www/yii-application/frontend/views/site/test-extra.php(6): yii\widgets\ActiveField->textInput('<span class="st...')
+#8 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(348): require('/home/roman/adm...')
+#9 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/roman/adm...', Array)
+#10 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/roman/adm...', Array, Object(frontend\controllers\SiteController))
+#11 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(384): yii\base\View->render('test-extra', Array, Object(frontend\controllers\SiteController))
+#12 /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php(129): yii\base\Controller->render('test-extra', Array)
+#13 [internal function]: frontend\controllers\SiteController->actionTest()
+#14 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('test', Array)
+#17 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/test', Array)
+#18 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#20 {main}
+2019-08-01 04:46:58 [127.0.0.1][-][c1j3or1blc2nf7qdcl1qd3g5u7][info][application] $_GET = [
+    'r' => 'site/test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'c1j3or1blc2nf7qdcl1qd3g5u7'
+    '_csrf-frontend' => '1f5744d7bbeb9fc90dddc7a2d1cadb2c4f9e2a7940b6ec12716e9aece5103eb8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"el7YPzZG4xujtUGbeleQtcKH_atkTMa_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=c1j3or1blc2nf7qdcl1qd3g5u7; _csrf-frontend=1f5744d7bbeb9fc90dddc7a2d1cadb2c4f9e2a7940b6ec12716e9aece5103eb8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22el7YPzZG4xujtUGbeleQtcKH_atkTMa_%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://frontend.dev/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'frontend.dev'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'frontend.dev'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '58402'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/home/roman/administrator/www/yii-application/frontend/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=site%2Ftest'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Ftest'
+    'SCRIPT_FILENAME' => '/home/roman/administrator/www/yii-application/frontend/web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1564634818.1497
+    'REQUEST_TIME' => 1564634818
+]
+2019-08-01 05:49:50 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][error][yii\base\InvalidConfigException] ReflectionException: Class validatePassword does not exist in /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/di/Container.php:431
+Stack trace:
+#0 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/di/Container.php(431): ReflectionClass->__construct('validatePasswor...')
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/di/Container.php(365): yii\di\Container->getDependencies('validatePasswor...')
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('validatePasswor...', Array, Array)
+#3 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('validatePasswor...', Array, Array)
+#4 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/validators/Validator.php(227): yii\BaseYii::createObject(Array)
+#5 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(468): yii\validators\Validator::createValidator('validatePasswor...', Object(frontend\models\TestForm), Array, Array)
+#6 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(420): yii\base\Model->createValidators()
+#7 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(189): yii\base\Model->getValidators()
+#8 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(816): yii\base\Model->scenarios()
+#9 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(434): yii\base\Model->activeAttributes()
+#10 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(494): yii\base\Model->getActiveValidators('username')
+#11 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(926): yii\base\Model->isAttributeRequired('username')
+#12 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(402): yii\widgets\ActiveField->addAriaAttributes('<span class="st...')
+#13 /home/roman/administrator/www/yii-application/frontend/views/site/test-extra.php(23): yii\widgets\ActiveField->textInput('<span class="st...')
+#14 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(348): require('/home/roman/adm...')
+#15 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/roman/adm...', '[<span class="s...')
+#16 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/roman/adm...', Array, Object(frontend\controllers\SiteController))
+#17 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(384): yii\base\View->render('test-extra', Array, Object(frontend\controllers\SiteController))
+#18 /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php(129): yii\base\Controller->render('test-extra', Array)
+#19 [internal function]: frontend\controllers\SiteController->actionTest()
+#20 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#21 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#22 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('test', Array)
+#23 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/test', Array)
+#24 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#26 {main}
+
+Next yii\base\InvalidConfigException: Failed to instantiate component or class "validatePassword". in /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/di/Container.php:433
+Stack trace:
+#0 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/di/Container.php(365): yii\di\Container->getDependencies('validatePasswor...')
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('validatePasswor...', Array, Array)
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('validatePasswor...', Array, Array)
+#3 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/validators/Validator.php(227): yii\BaseYii::createObject(Array)
+#4 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(468): yii\validators\Validator::createValidator('validatePasswor...', Object(frontend\models\TestForm), Array, Array)
+#5 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(420): yii\base\Model->createValidators()
+#6 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(189): yii\base\Model->getValidators()
+#7 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(816): yii\base\Model->scenarios()
+#8 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(434): yii\base\Model->activeAttributes()
+#9 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Model.php(494): yii\base\Model->getActiveValidators('username')
+#10 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(926): yii\base\Model->isAttributeRequired('username')
+#11 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(402): yii\widgets\ActiveField->addAriaAttributes('<span class="st...')
+#12 /home/roman/administrator/www/yii-application/frontend/views/site/test-extra.php(23): yii\widgets\ActiveField->textInput('<span class="st...')
+#13 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(348): require('/home/roman/adm...')
+#14 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/roman/adm...', '[<span class="s...')
+#15 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/roman/adm...', Array, Object(frontend\controllers\SiteController))
+#16 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(384): yii\base\View->render('test-extra', Array, Object(frontend\controllers\SiteController))
+#17 /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php(129): yii\base\Controller->render('test-extra', Array)
+#18 [internal function]: frontend\controllers\SiteController->actionTest()
+#19 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#20 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#21 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('test', Array)
+#22 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/test', Array)
+#23 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#25 {main}
+2019-08-01 05:49:49 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][info][application] $_GET = [
+    'r' => 'site/test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'jsg5ouse1g0dmq7plnacedb8p4'
+    '_csrf-frontend' => '7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"g_hevpp23qay8JP1D3TgV8wIkd37Zsy_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=jsg5ouse1g0dmq7plnacedb8p4; _csrf-frontend=7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22g_hevpp23qay8JP1D3TgV8wIkd37Zsy_%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://frontend.dev/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'frontend.dev'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'frontend.dev'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '59326'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/home/roman/administrator/www/yii-application/frontend/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=site%2Ftest'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Ftest'
+    'SCRIPT_FILENAME' => '/home/roman/administrator/www/yii-application/frontend/web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1564638589.8247
+    'REQUEST_TIME' => 1564638589
+]
+2019-08-01 05:55:04 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: test in /home/roman/administrator/www/yii-application/frontend/views/site/test-extra.php:6
+Stack trace:
+#0 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(257): yii\web\View->renderPhpFile()
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(156): yii\web\View->renderFile()
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(384): yii\web\View->render()
+#3 /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php(127): frontend\controllers\SiteController->render()
+#4 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): frontend\controllers\SiteController->actionTest()
+#5 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#6 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams()
+#7 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): frontend\controllers\SiteController->runAction()
+#8 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\web\Application->runAction()
+#9 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest()
+#10 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\web\Application->run()
+#11 {main}
+2019-08-01 05:55:04 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][info][application] $_GET = [
+    'r' => 'site/test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'jsg5ouse1g0dmq7plnacedb8p4'
+    '_csrf-frontend' => '7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"g_hevpp23qay8JP1D3TgV8wIkd37Zsy_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=jsg5ouse1g0dmq7plnacedb8p4; _csrf-frontend=7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22g_hevpp23qay8JP1D3TgV8wIkd37Zsy_%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://frontend.dev/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'frontend.dev'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'frontend.dev'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '59380'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/home/roman/administrator/www/yii-application/frontend/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=site%2Ftest'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Ftest'
+    'SCRIPT_FILENAME' => '/home/roman/administrator/www/yii-application/frontend/web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1564638904.791
+    'REQUEST_TIME' => 1564638904
+]
+2019-08-01 05:58:10 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: test in /home/roman/administrator/www/yii-application/frontend/views/site/test-extra.php:6
+Stack trace:
+#0 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(257): yii\web\View->renderPhpFile()
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(156): yii\web\View->renderFile()
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(384): yii\web\View->render()
+#3 /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php(129): frontend\controllers\SiteController->render()
+#4 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): frontend\controllers\SiteController->actionTest()
+#5 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#6 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams()
+#7 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): frontend\controllers\SiteController->runAction()
+#8 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\web\Application->runAction()
+#9 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest()
+#10 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\web\Application->run()
+#11 {main}
+2019-08-01 05:58:10 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][info][application] $_GET = [
+    'r' => 'site/test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'jsg5ouse1g0dmq7plnacedb8p4'
+    '_csrf-frontend' => '7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"g_hevpp23qay8JP1D3TgV8wIkd37Zsy_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=jsg5ouse1g0dmq7plnacedb8p4; _csrf-frontend=7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22g_hevpp23qay8JP1D3TgV8wIkd37Zsy_%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://frontend.dev/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'frontend.dev'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'frontend.dev'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '59408'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/home/roman/administrator/www/yii-application/frontend/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=site%2Ftest'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Ftest'
+    'SCRIPT_FILENAME' => '/home/roman/administrator/www/yii-application/frontend/web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1564639090.7395
+    'REQUEST_TIME' => 1564639090
+]
+2019-08-01 06:00:49 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: model in /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php:123
+Stack trace:
+#0 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams()
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): frontend\controllers\SiteController->runAction()
+#3 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\web\Application->runAction()
+#4 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest()
+#5 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\web\Application->run()
+#6 {main}
+2019-08-01 06:00:49 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][info][application] $_GET = [
+    'r' => 'site/test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'jsg5ouse1g0dmq7plnacedb8p4'
+    '_csrf-frontend' => '7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"g_hevpp23qay8JP1D3TgV8wIkd37Zsy_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=jsg5ouse1g0dmq7plnacedb8p4; _csrf-frontend=7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22g_hevpp23qay8JP1D3TgV8wIkd37Zsy_%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://frontend.dev/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'frontend.dev'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'frontend.dev'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '59450'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/home/roman/administrator/www/yii-application/frontend/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=site%2Ftest'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Ftest'
+    'SCRIPT_FILENAME' => '/home/roman/administrator/www/yii-application/frontend/web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1564639249.9423
+    'REQUEST_TIME' => 1564639249
+]
+2019-08-08 11:11:31 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: frontend\models\TestForm::login in /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/helpers/BaseHtml.php(2227): yii\base\Component->__get('login')
+#1 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/helpers/BaseHtml.php(1353): yii\helpers\BaseHtml::getAttributeValue(Object(frontend\models\TestForm), 'login')
+#2 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/helpers/BaseHtml.php(1407): yii\helpers\BaseHtml::activeInput('text', Object(frontend\models\TestForm), 'login', Array)
+#3 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/widgets/ActiveField.php(404): yii\helpers\BaseHtml::activeTextInput(Object(frontend\models\TestForm), 'login', Array)
+#4 /home/roman/administrator/www/yii-application/frontend/views/site/test-extra.php(23): yii\widgets\ActiveField->textInput(Array)
+#5 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(348): require('/home/roman/adm...')
+#6 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/roman/adm...', Array)
+#7 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/roman/adm...', Array, Object(frontend\controllers\SiteController))
+#8 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(384): yii\base\View->render('test-extra', Array, Object(frontend\controllers\SiteController))
+#9 /home/roman/administrator/www/yii-application/frontend/controllers/SiteController.php(128): yii\base\Controller->render('test-extra', Array)
+#10 [internal function]: frontend\controllers\SiteController->actionTest()
+#11 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#12 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#13 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('test', Array)
+#14 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/test', Array)
+#15 /home/roman/administrator/www/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /home/roman/administrator/www/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#17 {main}
+2019-08-08 11:11:30 [127.0.0.1][-][jsg5ouse1g0dmq7plnacedb8p4][info][application] $_GET = [
+    'r' => 'site/test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'jsg5ouse1g0dmq7plnacedb8p4'
+    '_csrf-frontend' => '7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"g_hevpp23qay8JP1D3TgV8wIkd37Zsy_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=jsg5ouse1g0dmq7plnacedb8p4; _csrf-frontend=7a582d53fe36ce8c39645478925415da27900715f56759583ce9446d2db63c84a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22g_hevpp23qay8JP1D3TgV8wIkd37Zsy_%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://frontend.dev/index.php?r=site%2Fabout'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'frontend.dev'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'frontend.dev'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '36286'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.15.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/home/roman/administrator/www/yii-application/frontend/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=site%2Ftest'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Ftest'
+    'SCRIPT_FILENAME' => '/home/roman/administrator/www/yii-application/frontend/web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1565262690.9596
+    'REQUEST_TIME' => 1565262690
+]
