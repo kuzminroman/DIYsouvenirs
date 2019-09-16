@@ -46,8 +46,8 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'description' => 'Description',
+            'title' => Yii::t('app','Title'),
+            'description' => Yii::t('app', 'Description'),
             'cathegory_id' => 'Cathegory ID',
         ];
     }
@@ -66,5 +66,10 @@ class Product extends \yii\db\ActiveRecord
     public function getCathegory()
     {
         return $this->hasOne(Category::className(), ['id' => 'cathegory_id']);
+    }
+
+    public function getViewCategory()
+    {
+        return $this->cathegory ? $this->cathegory->view : '';
     }
 }

@@ -4,19 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\ProductSearch */
+/* @var $searchModel common\models\AdvertSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Products');
+$this->title = 'Adverts';
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
-<div class="product-index">
+<div class="advert-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Product', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Advert', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,16 +27,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'title',
-            'description:ntext',
             [
-                'attribute' => 'cathegory_id',
-                'label' => Yii::t('app', 'Category'),
-                'format' => 'text',
+                'attribute' => 'product_id',
+                'label' => 'Название товара',
                 'content' => function($data) {
-                    return $data->getViewCategory();
-                },
+                    return $data->geProductName();
+                }
             ],
+            'price',
+            'date_created',
+            'date_updated',
+            //'date_sale',
+            //'status',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

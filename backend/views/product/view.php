@@ -32,7 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'description:ntext',
-            'cathegory_id',
+            [
+                'label' => 'Категория',
+                'format' => 'text',
+                'value' => function($data) {
+                    return $data->getViewCategory();
+                },
+            ],
         ],
     ]) ?>
 

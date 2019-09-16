@@ -8,11 +8,27 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
+
+        /*'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/translations',
+                    'sourceLanguage' => 'ru',
+                ],
+                'yii' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/translations',
+                    'sourceLanguage' => 'ru',
+                ],
+            ],
+        ],*/
         'request' => [
             'csrfParam' => '_csrf-backend',
             'baseUrl' => '',

@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Category */
+/* @var $model common\models\Advert */
 
-$this->title = $model->view;
-$this->params['breadcrumbs'][] = ['label' => 'Categories', 'url' => ['index']];
+$this->title = $model->geProductName();
+$this->params['breadcrumbs'][] = ['label' => 'Adverts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="category-view">
+<div class="advert-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,7 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'view',
+            'product_id',
+            'price',
+            'date_created',
+            'date_updated',
+            'date_sale',
+            [
+                'label' => Yii::t('app', 'Status'),
+                'format' => 'text',
+                'value' => function($data) {
+                    return $data->getStatus();
+                },
+            ],
         ],
     ]) ?>
 

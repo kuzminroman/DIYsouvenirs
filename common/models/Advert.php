@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use common\models\Claim;
 
 /**
  * This is the model class for table "advert".
@@ -73,4 +74,39 @@ class Advert extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Claim::className(), ['advert_id' => 'id']);
     }
+
+    public function geProductName()
+    {
+        return $this->product ? $this->product->title : '';
+    }
+
+    public function beforeSave($insert)
+    {
+        $dateNow = Yii::$app->formatter->asDate('now', 'php:Y-m-d h:i:s');
+        if (parent::beforeSave($insert)) {
+
+            $this->date_created = $dateNow;
+            if($this->status == 3) {
+                $this->date_sale = $dateNow;
+            } elseif($this->status == 1) {
+                $this->date_created = $dateNow;
+            } elseif($this->status == 2) {
+                $this->date_updated = $dateNow;
+            }
+
+            return true;
+        }
+        return false;
+    }
+
+    public function getStatus()
+    {
+        $status = [
+            1 => 'Модерация',
+            2 => 'Продажа',
+            3 => 'Продано',
+        ];
+        return $status[$this->status];
+    }
+
 }

@@ -1,9 +1,10 @@
 <?php
 
-namespace commmon\models;
+namespace common\models;
 
 use Yii;
-
+use common\models\Advert;
+use common\models\User;
 /**
  * This is the model class for table "claim".
  *
@@ -68,5 +69,13 @@ class Claim extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            $this->date_claim = Yii::$app->formatter->asDate('now', 'php:Y-m-d H:i:s');
+        }
+        return true;
     }
 }

@@ -37,7 +37,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
             <div class="left_col scroll-view">
 
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+                    <a href="/" class="site_title"><i class="fa fa-paw"></i> <span><?=Yii::t('app','Welcome!')?></span></a>
                 </div>
                 <div class="clearfix"></div>
 
@@ -47,8 +47,8 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                         <img src="http://placehold.it/128x128" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <span><?=Yii::t('app', 'Welcome')?>, </span>
+                        <h2><?= Yii::$app->user->identity ? Yii::$app->user->identity->username : 'Wellcome'?></h2>
                     </div>
                 </div>
                 <!-- /menu prile quick info -->
@@ -88,6 +88,14 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                             [
                                                 "label" => "Products",
                                                 "url" => "/product",
+                                            ],
+                                            [
+                                                "label" => "Adverts",
+                                                "url" => "/advert",
+                                            ],
+                                            [
+                                                "label" => "Claims",
+                                                "url" => "/claim",
                                             ],
                                         ],
                                     ],
@@ -181,7 +189,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="http://placehold.it/128x128" alt="">John Doe
+                                <img src="http://placehold.it/128x128" alt=""><?=Yii::$app->user->identity ? Yii::$app->user->identity->username : 'Wellcome'?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -196,7 +204,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                 <li>
                                     <a href="javascript:;">Help</a>
                                 </li>
-                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                <li><a href="/site/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                                 </li>
                             </ul>
                         </li>
@@ -241,7 +249,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         <img src="http://placehold.it/128x128" alt="Profile Image" />
                                     </span>
                       <span>
-                                        <span>John Smith</span>
+                                        <span><?=Yii::$app->user->identity ? Yii::$app->user->identity->username : 'Welcome'?></span>
                       <span class="time">3 mins ago</span>
                       </span>
                       <span class="message">
