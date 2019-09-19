@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a(Yii::t('app','Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app','Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -31,8 +31,27 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'user_id',
-            'advert_id',
-            'status',
+            [
+                'label' => Yii::t('app', Yii::t('app', 'Advert')),
+                'format' => 'raw',
+                'value' => function($data){
+                    return Html::a(
+                            $data->id, \yii\helpers\Url::to(['advert/view', 'id' => $data->advert->id]),
+                        [
+                            'style'=>'text-decoration: underline;',
+                            'class' => 'profile-link',
+                            'target' => '_blank',
+                        ]
+                    );
+                }
+            ],
+            [
+                'label' => Yii::t('app','Status'),
+                'value' => function($data) {
+                    return $data->getStatusName();
+                }
+            ],
+
             'date_claim',
         ],
     ]) ?>

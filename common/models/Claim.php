@@ -48,10 +48,10 @@ class Claim extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => 'User ID',
-            'advert_id' => 'Advert ID',
-            'status' => 'Status',
-            'date_claim' => 'Date Claim',
+            'user_id' => Yii::t('app', 'User ID'),
+            'advert_id' => Yii::t('app','Advert ID'),
+            'status' => Yii::t('app', 'Status'),
+            'date_claim' => Yii::t('app','Date Claim'),
         ];
     }
 
@@ -77,5 +77,15 @@ class Claim extends \yii\db\ActiveRecord
             $this->date_claim = Yii::$app->formatter->asDate('now', 'php:Y-m-d H:i:s');
         }
         return true;
+    }
+
+    public function getStatusName()
+    {
+        $statusClaims = [
+            1 => 'Новая',
+            2 => 'В процессе',
+            3 => 'Закрыта',
+        ];
+        return $statusClaims[$this->status];
     }
 }

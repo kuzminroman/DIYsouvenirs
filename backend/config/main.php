@@ -59,6 +59,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'advert/<id:\d+>' => 'advert/view',
             ],
         ],
 
