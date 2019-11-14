@@ -13,6 +13,7 @@ use common\models\User;
  * @property int $advert_id
  * @property int $status
  * @property string $date_claim
+ * @property string $image
  *
  * @property Advert $advert
  * @property User $user

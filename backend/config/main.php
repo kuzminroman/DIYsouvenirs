@@ -12,7 +12,17 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+
+    'modules' => [
+        /*'gallery' => [
+            'class' => 'dvizh\gallery\Module',
+            'imagesStorePath' => dirname(dirname(__DIR__)).'/frontend/web/images/store', //path to origin images
+            'imagesCachePath' => dirname(dirname(__DIR__)).'/frontend/web/images/cache', //path to resized copies
+            'graphicsLibrary' => 'GD',
+            'placeHolderPath' => '@webroot/images/placeHolder.png',
+            'adminRoles' => ['*'],
+        ],*/
+    ],
     'components' => [
 
         /*'i18n' => [
@@ -56,6 +66,17 @@ return [
         ],
 
         'urlManager' => [
+            'rules' => [
+                // ...
+                'notifications/poll' => '/notifications/notifications/poll',
+                'notifications/rnr' => '/notifications/notifications/rnr',
+                'notifications/read' => '/notifications/notifications/read',
+                'notifications/read-all' => '/notifications/notifications/read-all',
+                'notifications/delete-all' => '/notifications/notifications/delete-all',
+                'notifications/delete' => '/notifications/notifications/delete',
+                'notifications/flash' => '/notifications/notifications/flash',
+                // ...
+            ],
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [

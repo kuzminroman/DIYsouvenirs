@@ -19,7 +19,17 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "yiister/yii2-gentelella": "~1.0",
-        "kartik-v/yii2-widget-datepicker": "@dev"
+        "kartik-v/yii2-widget-datepicker": "@dev",
+        "kartik-v/yii2-widget-fileinput": "dev-master",
+        "philippfrenzel/yii2fullcalendar": "*",
+        "zxbodya/yii2-gallery-manager": "*@dev",
+        "onmotion/yii2-gallery": y"*",
+        "dvizh/yii2-gallery": "@dev",
+        "nizsheanez/yii2-asset-converter": "1.*",
+        "bscheshirwork/yii2-gallery-manager-imaginary": "*@dev",
+        "webzop/yii2-notifications": "*",
+        "machour/yii2-notifications": "*",
+        "yiimaker/yii2-social-share": "^2.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

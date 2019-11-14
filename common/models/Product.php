@@ -3,6 +3,10 @@
 namespace common\models;
 
 use Yii;
+use yii\db\Exception;
+use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use bscheshirwork\yii2\galleryManager\GalleryBehavior;
 
 /**
  * This is the model class for table "product".
@@ -11,6 +15,7 @@ use Yii;
  * @property string $title
  * @property string $description
  * @property int $cathegory_id
+ * @property string $image_id
  *
  * @property Advert[] $adverts
  * @property Category $cathegory
@@ -25,6 +30,8 @@ class Product extends \yii\db\ActiveRecord
         return 'product';
     }
 
+    public $imageFile = [];
+
     /**
      * {@inheritdoc}
      */
@@ -36,6 +43,8 @@ class Product extends \yii\db\ActiveRecord
             [['cathegory_id'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['cathegory_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['cathegory_id' => 'id']],
+            [['image_id'], 'integer'],
+            [['imageFile'], 'file', 'maxFiles' => 4, 'extensions' => 'png, jpg, jpeg'],
         ];
     }
 
@@ -45,10 +54,11 @@ class Product extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'id' => '№',
             'title' => Yii::t('app','Title'),
             'description' => Yii::t('app', 'Description'),
-            'cathegory_id' => 'Cathegory ID',
+            'cathegory_id' => Yii::t('app', 'Category'),
+            'imageFile' => Yii::t('app', 'Images'),
         ];
     }
 
@@ -71,5 +81,21 @@ class Product extends \yii\db\ActiveRecord
     public function getViewCategory()
     {
         return $this->cathegory ? $this->cathegory->view : '';
+    }
+
+    /*public function beforeSave($insert)
+    {
+       if (parent::beforeSave($insert)) {
+           $this->image_id = $this->imageFile;
+       }
+       return true;
+    }*/
+
+    public function upload()
+    {
+        foreach ($this->imageFile as $file) {
+            $file->saveAs('img/product/' . $file->baseName . '.' . $file->extension);
+        }
+        return true;
     }
 }

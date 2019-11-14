@@ -2,12 +2,19 @@
 
 namespace backend\controllers;
 
+use common\components\Notification;
+use common\models\GalleryImage;
+use common\models\Noty;
+use common\models\User;
 use Yii;
 use common\models\Product;
 use common\models\ProductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+//use zxbodya\yii2\galleryManager\GalleryManagerAction;
+use bscheshirwork\yii2\galleryManager\GalleryManagerAction;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -75,21 +82,33 @@ class ProductController extends Controller
         ]);
     }
 
-    /**
-     * Updates an existing Product model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+    /***
+     * @param $id
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     * @throws \yii\base\Exception
      */
+
+    public function actionEmail()
+    {
+        return $this->render('email');
+    }
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
+        if (Yii::$app->request->isPost) {
+            $model->imageFile = UploadedFile::getInstances($model, 'imageFile');
+            $user = User::findOne(2);
 
+            Notification::error(Notification::KEY_NO_DISK_SPACE, 2);
+
+            Yii::$app->session->setFlash('success', 'Поздравляю, вы оставили заявку');
+
+            if ($model->validate() && $model->save() /*&& $model->upload()*/) {
+                return $this->redirect(['view', 'id' => $model->id, 'model' => $model]);
+            }
+        }
         return $this->render('update', [
             'model' => $model,
         ]);
@@ -124,4 +143,5 @@ class ProductController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }

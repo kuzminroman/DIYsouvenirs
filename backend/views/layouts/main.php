@@ -5,6 +5,7 @@
  * @var \yii\web\View $this
  */
 
+use machour\yii2\notifications\widgets\NotificationsWidget;
 use yii\helpers\Html;
 
 $bundle = yiister\gentelella\assets\Asset::register($this);
@@ -21,6 +22,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <?php Yii::$app->language = 'ru' ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -37,7 +39,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
             <div class="left_col scroll-view">
 
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="/" class="site_title"><i class="fa fa-paw"></i> <span><?=Yii::t('app','Welcome!')?></span></a>
+                    <a href="/" class="site_title"><span class="fa fa-star-half-o"></span> <span><?=Yii::t('app','Welcome!')?></span></a>
                 </div>
                 <div class="clearfix"></div>
 
@@ -59,96 +61,18 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                     <div class="menu_section">
-                        <h3>General</h3>
+                        <br/>
+                        <br/>
+                        <br/>
                         <?=
                         \yiister\gentelella\widgets\Menu::widget(
                             [
                                 "items" => [
-                                    ["label" => "Home", "url" => "/", "icon" => "home"],
-                                    ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
-                                    ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
-                                    [
-                                        "label" => "Widgets",
-                                        "icon" => "th",
-                                        "url" => "#",
-                                        "items" => [
-                                            ["label" => "Menu", "url" => ["site/menu"]],
-                                            ["label" => "Panel", "url" => ["site/panel"]],
-                                        ],
-                                    ],
-                                    [
-                                        "label" => "General",
-                                        "url" => "#",
-                                        "icon" => "table",
-                                        "items" => [
-                                            [
-                                                "label" => "Сategories",
-                                                "url" => "/category",
-                                            ],
-                                            [
-                                                "label" => "Products",
-                                                "url" => "/product",
-                                            ],
-                                            [
-                                                "label" => "Adverts",
-                                                "url" => "/advert",
-                                            ],
-                                            [
-                                                "label" => "Claims",
-                                                "url" => "/claim",
-                                            ],
-                                        ],
-                                    ],
-
-                                    [
-                                        "label" => "Badges",
-                                        "url" => "#",
-                                        "icon" => "table",
-                                        "items" => [
-                                            [
-                                                "label" => "Default",
-                                                "url" => "#",
-                                                "badge" => "123",
-                                            ],
-                                            [
-                                                "label" => "Success",
-                                                "url" => "#",
-                                                "badge" => "new",
-                                                "badgeOptions" => ["class" => "label-success"],
-                                            ],
-                                            [
-                                                "label" => "Danger",
-                                                "url" => "#",
-                                                "badge" => "!",
-                                                "badgeOptions" => ["class" => "label-danger"],
-                                            ],
-                                        ],
-                                    ],
-                                    [
-                                        "label" => "Multilevel",
-                                        "url" => "#",
-                                        "icon" => "table",
-                                        "items" => [
-                                            [
-                                                "label" => "Second level 1",
-                                                "url" => "#",
-                                            ],
-                                            [
-                                                "label" => "Second level 2",
-                                                "url" => "#",
-                                                "items" => [
-                                                    [
-                                                        "label" => "Third level 1",
-                                                        "url" => "#",
-                                                    ],
-                                                    [
-                                                        "label" => "Third level 2",
-                                                        "url" => "#",
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
+                                    ["label" => Yii::t("app", "Home"), "url" => "/", "icon" => "home"],
+                                    ["label" => Yii::t("app", "Categories"), "url" => "/category", "icon" => "table"],
+                                    ["label" => Yii::t("app","Products"), "url" => "/product", "icon" => "table"],
+                                    ["label" => Yii::t("app", "Adverts"), "url" => "/advert", "icon" => "table"],
+                                    ["label" => Yii::t("app","Claims"), "url" => "/claim", "icon" => "table"],
                                 ],
                             ]
                         )
@@ -214,71 +138,42 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                 <i class="fa fa-envelope-o"></i>
                                 <span class="badge bg-green">6</span>
                             </a>
+
+                            <?php NotificationsWidget::widget([
+                                'theme' => NotificationsWidget::THEME_NOTY,
+                                'clientOptions' => [
+                                    'location' => 'br',
+                                ],
+                                'counters' => [
+                                    '.notifications-header-count',
+                                    '.notifications-icon-count'
+                                ],
+                                'markAllSeenSelector' => '#notification-seen-all',
+                                'listSelector' => '#notifications',
+                            ]);
+
+                            ?>
+
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning notifications-icon-count">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have <span class="notifications-header-count">0</span> notifications</li>
+                                <li>
+                                    <ul class="menu">
+                                        <div id="notifications"></div>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a> / <a href="#" id="notification-seen-all">Mark all as seen</a></li>
+                            </ul>
+                        </li>
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
+
                                 </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span><?=Yii::$app->user->identity ? Yii::$app->user->identity->username : 'Welcome'?></span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="text-center">
-                                        <a href="/">
-                                            <strong>See All Alerts</strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
+
                             </ul>
                         </li>
 
